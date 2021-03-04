@@ -11,6 +11,10 @@ export default class Game {
     requestAnimationFrame(this.loop);
   }
 
+  async init() {
+    this.view.init();
+  }
+
   loop() {
     //get input;
     this.world.update();
