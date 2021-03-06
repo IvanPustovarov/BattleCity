@@ -16,7 +16,7 @@ export default class View {
   renderPlayer1Tank(player1Tank) {
     this.context.drawImage(
       this.sprite.image,
-      ...player1Tank.sprite[player1Tank.direction],
+      ...player1Tank.sprite,
       player1Tank.x,
       player1Tank.y,
       32,
