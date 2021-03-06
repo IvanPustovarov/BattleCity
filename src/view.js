@@ -5,8 +5,26 @@ export default class View {
     this.sprite = sprite;
   }
 
-  update() {}
   async init() {
     await this.sprite.load();
+  }
+  update(world) {
+    this.clearScreen();
+    this.renderPlayer1Tank(world.player1Tank);
+  }
+
+  renderPlayer1Tank(player1Tank) {
+    this.context.drawImage(
+      this.sprite.image,
+      ...player1Tank.sprite[player1Tank.direction],
+      player1Tank.x,
+      player1Tank.y,
+      32,
+      32
+    );
+  }
+
+  clearScreen() {
+    this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
   }
 }
