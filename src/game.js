@@ -15,6 +15,7 @@ export default class Game {
 
   async init() {
     this.view.init();
+    this.world.level = this.levels[0];
 
     document.addEventListener("keydown", (event) => {
       event.preventDefault();
